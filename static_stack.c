@@ -9,3 +9,30 @@ struct stack
 };
 
 
+typedef struct stack stack; 
+
+
+void push( stack * s, int value)
+{
+   s->arr[++s->head] = value; 
+}
+
+int pop( stack *s) 
+{
+   return s->arr[s->head--];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

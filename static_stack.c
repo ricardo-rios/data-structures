@@ -29,10 +29,27 @@ void init( stack *s)
 
 bool empty( stack *s) 
 {
-
+   return s->head == -1;
 }
 
 
+int main()
+{
+   stack s; 
+   init(&s); 
+
+   push(&s, 10);
+   push(&s, 2); 
+   push(&s, 1); 
+   
+   while(!empty(&s))
+   {
+      printf("%d ",pop(&s));
+      printf("\n"); 
+   }
+
+   return 0;
+}
 
 
 

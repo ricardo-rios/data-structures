@@ -22,6 +22,22 @@ int pop( stack *s)
    return s->arr[s->head--];
 }
 
+void init( stack *s) 
+{
+   s->head = -1; 
+}
+
+bool empty( stack *s) 
+{
+
+}
+
+
+
+
+
+
+
 
 
 

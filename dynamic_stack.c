@@ -35,10 +35,19 @@ void push_stack(stack *s, int value)
    s -> size ++;
 }
 
+int pop_stack(stack *s)
+{
+   int value = s->top->value; 
+   stack_node * sn = s->top;
+   s->top = s->top->next; 
+   s->size--;
+   free(sn); 
+   return value; 
+}
 
 int main()
 {
-
+   
    return 0; 
 }
 

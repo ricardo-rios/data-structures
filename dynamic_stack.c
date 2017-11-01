@@ -26,6 +26,22 @@ stack * create_stack()
    return s; 
 }
 
+void push_stack(stack *s, int value)
+{
+   stack_node * n = (stack_node *) malloc(sizeof(stack_node)); 
+   n -> value = value; 
+   n -> next = s->top; 
+   s -> top = n; 
+   s -> size ++;
+}
+
+
+int main()
+{
+
+   return 0; 
+}
+
 
 
 

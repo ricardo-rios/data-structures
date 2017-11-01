@@ -26,6 +26,12 @@ stack * create_stack()
    return s; 
 }
 
+bool empty_stack(stack *s)
+{
+   return s->size == 0;   
+
+}
+
 void push_stack(stack *s, int value)
 {
    stack_node * n = (stack_node *) malloc(sizeof(stack_node)); 
@@ -44,6 +50,8 @@ int pop_stack(stack *s)
    free(sn); 
    return value; 
 }
+
+
 
 int main()
 {

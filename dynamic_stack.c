@@ -47,7 +47,16 @@ int pop_stack(stack *s)
 
 int main()
 {
+   stack * s = create_stack();
    
+   push_stack(s, 5); 
+   push_stack(s, 9);
+   push_stack(s, 3); 
+   
+   while(!empty_stack(s))
+      printf("%d\n", pop_stack(s));   
+
+
    return 0; 
 }
 

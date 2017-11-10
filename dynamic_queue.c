@@ -43,13 +43,20 @@ void push_queue(queue *q, int value)
 
    if (empty_queue(q))
    {
-      
+      q->front = qn;
+      q->next = qn;
+       
+   }
 
-   }   
+   else
+   {
+      q->back->next = qn; 
+      q->back = qn;
+   }
 
+   q->size ++; 
 
-
-
+   
 }
 
 

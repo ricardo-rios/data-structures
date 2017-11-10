@@ -70,16 +70,16 @@ int pop_queue(queue * q)
 
    int value = q->front->value; 
 
-   
- 
-
-
-
-
-
-
-
+   queue_node * qn = q->front; 
+   q->front = q->front->next; 
+   free(qn); 
+   q->size --; 
+   return value;
+  
 }
+
+
+
 
 
 

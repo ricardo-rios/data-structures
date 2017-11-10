@@ -30,6 +30,57 @@ queue * create_queue()
    return q; 
 }
 
+bool empty_queue(queue * q)
+{
+   return q->size == 0;
+}
+
+void push_queue(queue *q, int value)
+{
+   queue_node *qn = (queue *) malloc(sizeof(queue_node)); 
+   qn->next = NULL; 
+   qn->value = value; 
+
+   if (empty_queue(q))
+   {
+      
+
+   }   
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

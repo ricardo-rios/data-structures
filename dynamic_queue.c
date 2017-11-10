@@ -60,7 +60,26 @@ void push_queue(queue *q, int value)
 }
 
 
+int pop_queue(queue * q)
+{
+   if (empty_queue(q))
+   {
+      printf("Error la cola esta vacía!\n"); 
+      return 0; 
+   }
 
+   int value = q->front->value; 
+
+   
+ 
+
+
+
+
+
+
+
+}
 
 
 

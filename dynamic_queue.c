@@ -6,7 +6,7 @@ struct queue_node
 {
    int value; 
    struct queue_node * next; 
-}
+}; 
 
 
 typedef struct queue_node queue_node;
@@ -17,7 +17,7 @@ struct queue
    queue_node * front; 
    queue_node * back; 
    int size; 
-}
+};
 
 typedef struct queue queue; 
 
@@ -37,14 +37,14 @@ bool empty_queue(queue * q)
 
 void push_queue(queue *q, int value)
 {
-   queue_node *qn = (queue *) malloc(sizeof(queue_node)); 
+   queue_node *qn = (queue_node *) malloc(sizeof(queue_node)); 
    qn->next = NULL; 
    qn->value = value; 
 
    if (empty_queue(q))
    {
       q->front = qn;
-      q->next = qn;
+      q->back = qn;
        
    }
 
@@ -78,6 +78,21 @@ int pop_queue(queue * q)
   
 }
 
+
+int main()
+{
+   queue *q = create_queue(); 
+   push_queue(q, 5); 
+   push_queue(q, 10); 
+   push_queue(q, 7); 
+   
+   while(!empty_queue(q))
+      printf("%d\n", pop_queue(q)); 
+  
+   
+
+   return 0; 
+}
 
 
 

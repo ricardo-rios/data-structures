@@ -12,3 +12,36 @@ struct queue_node
 typedef struct queue_node queue_node;
 
 
+struct queue
+{
+   queue_node * front; 
+   queue_node * back; 
+   int size; 
+}
+
+typedef struct queue queue; 
+
+queue * create_queue()
+{
+   queue * q = (queue *) malloc(sizeof(queue)); 
+   q->back = NULL; 
+   q->front = NULL; 
+   q->size = 0; 
+   return q; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

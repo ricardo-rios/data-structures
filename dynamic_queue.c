@@ -78,6 +78,20 @@ int pop_queue(queue * q)
   
 }
 
+void print_queue(queue *q)
+{  
+   if (empty_queue)
+      print("No hay nada que imprimir"); 
+
+      
+   temp_qn = q->front; 
+
+   
+
+
+
+
+}
 
 int main()
 {

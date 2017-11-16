@@ -68,6 +68,27 @@ int pop_front_list(list * l)
 }
 
 
+void push_back_list(list * l, int value)
+{
+
+   list_node * ln = (list_node *) malloc(sizeof(list_node)); 
+   ln->value = value; 
+   ln->next = NULL;
+   list_node * p = l->head; 
+   
+   while( p->next != NULL)
+   {
+      p = p->next;
+   }
+
+   if ( p == NULL) 
+      l->head = ln; 
+   else 
+      p->next = ln; 
+
+   l->size++;
+
+}
 
 
 

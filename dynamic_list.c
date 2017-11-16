@@ -44,6 +44,7 @@ void push_front_list(list *l, int value)
    list_node * ln = (list_node *) malloc(sizeof(list_node)); 
    ln->value = value; 
    ln->next = l->head; 
+   l->head = ln;
    l->size++; 
 }
 
@@ -76,7 +77,14 @@ int pop_front_list(list * l)
 int main()
 {
   
-   
+   list * l = create_list(); 
+   push_front_list(l, 5); 
+   push_front_list(l, 3); 
+   push_front_list(l, 3); 
+
+   while( !empty_list(l) )
+      printf("%d\n", pop_front_list(l)); 
+
 
    return 0; 
 }

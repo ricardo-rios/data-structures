@@ -76,7 +76,7 @@ void push_back_list(list * l, int value)
    ln->next = NULL;
    list_node * p = l->head; 
    
-   while( p->next != NULL)
+   while( p!= NULL && p->next != NULL)
    {
       p = p->next;
    }
@@ -131,12 +131,20 @@ int main()
 {
   
    list * l = create_list(); 
-   push_front_list(l, 5); 
-   push_front_list(l, 3); 
-   push_front_list(l, 3); 
+   //push_front_list(l, 5); 
+   //push_front_list(l, 3); 
+   //push_front_list(l, 3); 
+
+
+   push_back_list(l, 5); 
+   push_back_list(l, 3); 
+   push_back_list(l, 3); 
+
+
 
    while( !empty_list(l) )
-      printf("%d\n", pop_front_list(l)); 
+      //printf("%d\n", pop_front_list(l)); 
+      printf("%d\n", pop_back_list(l)); 
 
 
    return 0; 

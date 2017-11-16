@@ -90,6 +90,38 @@ void push_back_list(list * l, int value)
 
 }
 
+int pop_back_list( list * l) 
+{
+
+   if (empty_list(l))
+   {
+      printf("Error empty list ! \n");
+      return 0; 
+   }
+
+   if (l->head->next == NULL) 
+   {
+      int value = l->head->value; 
+      free(l->head); 
+      l->head = NULL; 
+      l->size--;
+      return value; 
+   }
+
+   list_node * ln = l->head; 
+   
+   while( ln->next->next != NULL) 
+   {
+      ln = ln->next;
+   }
+
+   int value = ln->next->value; 
+   free(ln->next);
+   ln->next = NULL; 
+   l->size--; 
+   return value; 
+
+}
 
 
 

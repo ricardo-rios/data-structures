@@ -177,18 +177,18 @@ int main()
    list * l = create_list(); 
    //push_front_list(l, 5); 
    //push_front_list(l, 3); 
-   //push_front_list(l, 3); 
+   //push_front_list(l, 2); 
 
 
    push_back_list(l, 5); 
    push_back_list(l, 3); 
-   push_back_list(l, 3); 
+   push_back_list(l, 2); 
 
 
 
-   //while( !empty_list(l) )
+   while( !empty_list(l) )
       //printf("%d\n", pop_front_list(l)); 
-   //    printf("%d\n", pop_back_list(l)); 
+       printf("%d\n", pop_back_list(l)); 
 
 
    return 0; 

@@ -60,11 +60,14 @@ void push_front_list(list *l, int value)
       return; 
    }
   
-
+   else
+   {
+      ln->next = l->head; 
+      l->head = ln;
+      l->size++;
+      return; 
+   }
    
-
-   
-
 
 }
 

@@ -100,6 +100,38 @@ void push_back_list(list * l, int value)
 
 }
 
+int pop_front_list(list * l)
+{
+   if(empty_list(l))
+   {
+      printf("Error empy list \n"); 
+      return 0; 
+   }
+
+   int value = l->head->value; 
+   list_node * ln = l->head; 
+
+   if (l->size == 1)
+   {
+      l->size--;
+      l->head = NULL; 
+      l->tail = NULL; 
+      free(ln); 
+      return value; 
+   }
+
+   else
+   {
+      l->head = l->head->next; 
+      l->head->previous = NULL; 
+      free(ln); 
+      l->size--; 
+      return value;    
+   }
+
+
+}
+
 
 
 

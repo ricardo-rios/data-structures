@@ -16,7 +16,7 @@ typedef struct list_node list_node;
 struct list
 {
    list_node * head; 
-   list node * tail; 
+   list_node * tail; 
    int size; 
 }; 
 
@@ -72,79 +72,35 @@ void push_front_list(list *l, int value)
 }
 
 
-int pop_front_list(list * l)
-{
-   if (empty_list(l))
-   {
-      printf("Error"); 
-      return 0; 
-   }
-
-   int value = l->head->value;    
-   list_node * ln = l->head;
-   l->head = l->head->next; 
-   free(ln); 
-   l->size--;
-
-   return value; 
-   
-}
-
-
 void push_back_list(list * l, int value)
 {
 
    list_node * ln = (list_node *) malloc(sizeof(list_node)); 
+
    ln->value = value; 
-   ln->next = NULL;
-   list_node * p = l->head; 
-   
-   while( p!= NULL && p->next != NULL)
-   {
-      p = p->next;
-   }
-
-   if ( p == NULL) 
-      l->head = ln; 
-   else 
-      p->next = ln; 
-
-   l->size++;
-
-}
-
-int pop_back_list( list * l) 
-{
-
-   if (empty_list(l))
-   {
-      printf("Error empty list ! \n");
-      return 0; 
-   }
-
-   if (l->head->next == NULL) 
-   {
-      int value = l->head->value; 
-      free(l->head); 
-      l->head = NULL; 
-      l->size--;
-      return value; 
-   }
-
-   list_node * ln = l->head; 
-   
-   while( ln->next->next != NULL) 
-   {
-      ln = ln->next;
-   }
-
-   int value = ln->next->value; 
-   free(ln->next);
    ln->next = NULL; 
-   l->size--; 
-   return value; 
+   ln->previous = NULL; 
+
+   if(empty_list(l))
+   {
+      l->head = ln; 
+      l->tail = ln;
+      l->size++; 
+      return; 
+   }
+
+   else
+   {
+      ln->previous = l->tail; 
+      l->tail->next = ln; 
+      l->tail = ln; 
+      l->size++; 
+      return;    
+   }
 
 }
+
+
 
 
 
@@ -165,9 +121,9 @@ int main()
 
 
 
-   while( !empty_list(l) )
+   //while( !empty_list(l) )
       //printf("%d\n", pop_front_list(l)); 
-      printf("%d\n", pop_back_list(l)); 
+   //    printf("%d\n", pop_back_list(l)); 
 
 
    return 0; 

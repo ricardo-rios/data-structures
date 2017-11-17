@@ -27,6 +27,7 @@ list * create_list()
 {
    list * l = (list *) malloc(sizeof(list)); 
    l->head = NULL; 
+   l->tail = NULL; 
    l->size = 0; 
 
    return l;
@@ -44,10 +45,27 @@ bool empty_list(list * l)
 void push_front_list(list *l, int value)
 {
    list_node * ln = (list_node *) malloc(sizeof(list_node)); 
+
    ln->value = value; 
-   ln->next = l->head; 
-   l->head = ln;
-   l->size++; 
+
+   ln->next = NULL; 
+    
+   ln->previous = NULL; 
+  
+   if (empty_list(l)) 
+   {
+      l->head = ln; 
+      l->tail = ln; 
+      l->size++;
+      return; 
+   }
+  
+
+   
+
+   
+
+
 }
 
 

@@ -104,7 +104,7 @@ int pop_front_list(list * l)
 {
    if(empty_list(l))
    {
-      printf("Error empy list \n"); 
+      printf("Error empty list \n"); 
       return 0; 
    }
 
@@ -132,7 +132,40 @@ int pop_front_list(list * l)
 
 }
 
+int pop_back_list(list * l)
+{
 
+   if(empty_list(l))
+   {
+      printf("Error empty list \n"); 
+      return 0; 
+   }
+
+   int value = l->tail->value; 
+   list_node * ln = l->tail; 
+
+   if (l->size == 1)
+   {
+      l->size--;
+      l->head = NULL; 
+      l->tail = NULL; 
+      free(ln); 
+      return value; 
+   }
+
+   else
+   {
+      l->tail = l->tail->previous; 
+      l->tail->next = NULL; 
+      free(ln); 
+      l->size--;
+      return value;   
+   }
+
+
+
+
+}
 
 
 
